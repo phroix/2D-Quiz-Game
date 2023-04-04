@@ -1,0 +1,282 @@
+/*Mobile first and login*/
+html{
+    height: 100%;
+    font-family: 'Lucida Sans';
+}
+body{
+    margin: 0;
+    height: 100%;
+}
+.page{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: linear-gradient(90deg,rgb(110, 39, 151), rgb(4, 205, 240));
+}
+
+.header{
+    margin: 0.5em;
+}
+
+.header,.footer{
+    color: white;
+}
+.content * {
+    margin-top: 1px;
+}
+main{
+    height: 100%;
+    background-color:rgb(190, 182, 182);
+}
+.main{
+    height: 100%;
+}
+
+header, main, footer,.chapterBarLimiter,.resultControl, .limiter{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+footer{
+    font-size: small;
+    margin-top: 5px;
+}
+
+.allignRight{
+    text-align: right;
+}
+
+.contentcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fieldset{
+    border: 5px solid;
+    border-color: rgb(4, 205, 240);
+    color: rgb(110, 39, 151);
+    border-radius: 15px;
+    margin: 15px;
+}
+
+.login [type="submit"]{
+    box-sizing: content-box;
+    /*height: 40px;
+    width: 60px;*/
+    padding-left: 20px; 
+	padding-right: 20px; 
+	padding-top: 15px; 
+	padding-bottom: 15px; 
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.login [type="submit"]:hover{
+    background-color: white;
+}
+/* Wait screen*/
+@keyframes waitring {
+    0% {transform: rotate(0deg)}
+    100% {transform: rotate(360deg);}
+}
+
+.waitscreen{
+    width: 80%;
+    margin: 0 auto;
+    max-width: 400px;
+    position: relative;
+}
+
+.waitscreenArea{
+    margin-top: 100%;
+}
+
+.waitscreenCircle{
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    border-width:4px;
+    border-style: solid;
+    border-color: transparent rgb(110, 39, 151) transparent rgb(110, 39, 151);
+    border-radius: 100%;
+    animation: waitring 2s linear infinite;
+}
+.waitscreenText{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 2em;
+}
+
+/*chapterbar*/
+
+.actionMessage{
+    text-align: center;
+    font-size: large;
+}
+
+#select-Theme, #select-Chapter{
+    width: 100%;
+    height: 2em;
+}
+
+select option[disabled]{
+    font-size: large;
+    font-weight: bold;
+}
+
+@media screen and (min-width:361px){
+    #select-Theme, #select-Chapter{
+        width: 50%;
+        float: left;
+    }
+}
+
+/*Quiz*/
+
+.quiz h1{
+    color: black;
+    font-size: 120%;
+}
+
+.fieldset [type="submit"]{
+    padding-left: 1em; 
+	padding-right: 1em; 
+	padding-top: 0.5em; 
+	padding-bottom: 0.5em;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.quiz [type="submit"]:hover{
+    background-color: white;
+}
+
+.quizQuestions{
+    color: black;
+    padding: 4px;
+    transition-delay:0.1s;
+}
+.quizQuestions:hover{
+    background-color: white;
+    font-weight: bold;
+}
+
+/*Result*/
+.result{
+    width: 60%;
+    margin: 0 auto;
+    max-width: 400px;
+    position: relative;
+
+}
+
+.resultArea{
+    margin-top: 100%;
+}
+
+.resultMark{
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.resultRight
+{
+   background: url('images/right.png');
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+
+.resultWrong
+{
+   background: url('images/wrong.png');
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+
+.resultControl{
+    background-color: rgb(190, 182, 182);
+    white-space: nowrap;
+    display: flex;
+}
+
+
+.resultControl [type="submit"]{
+    width: 50%;
+    padding: 0.5em;
+    border-radius: 10px;
+    border: 1px solid;
+    font-size: 120%;
+}
+
+.resultControl [type="submit"]:hover{
+    background-color: white;
+
+}
+
+/*Summary*/
+.summary{
+    position: relative;
+    width: 70%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.summaryArea{
+    margin-top: 100%;
+}
+
+.summaryPie{
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: conic-gradient(rgb(126, 43, 32) 0% 25%,rgb(4, 240, 110) 0% 75%);
+    border-radius: 50%;
+};
+
+
+.summerTopics,.summerChapter{
+    text-align: center;
+}
+
+.summerTopics{
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: large;
+}
+
+.summaryLabelLeft{
+    float:left;
+    text-align: left;
+}
+
+.summaryLabelRight{
+    float:right;
+    text-align: right;
+}
+
+.summaryLabelLeft,.summaryLabelRight{
+    background-color: rgb(190, 182, 182);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+input:invalid {
+    color: red;
+}
+
+.ReplayButtonContainer [type="submit"]{
+    width: 100%;
+    height: 3em;
+    display: block;
+}
